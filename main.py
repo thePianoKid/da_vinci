@@ -112,6 +112,14 @@ def gyroTurn(deg, speed):
     C.brake()
 
 
+def rightTurn(speed):
+    tankMoveRot(B, C, speed, speed, -0.90, 0.90)
+
+
+def leftTurn(speed):
+    tankMoveRot(B, C, speed, speed, 0.90, -0.90)
+
+
 def penUp():
     A = Motor(Port.A)
     medMotor(A, 500, -180)
@@ -142,9 +150,29 @@ def centerDome():
 
 turn_speed = 25
 
-centerDome()
-
 engage()
+
+penDown()
+tankMoveRot(B, C, 500, 45, 2.27, 0.222)
+tankMoveRot(B, C, 135, 500, 0.225, 0.833)
+penUp()
+tankMoveRot(B, C, 100, 100, -0.3, 0.3)
+penDown()
+tankMoveRot(B, C, 100, 100, 0.2, 0.2)
+penUp()
+tankMoveRot(B, C, 100, 100, -0.2, -0.2)
+tankMoveRot(B, C, 100, 100, -0.3, 0.3)
+penDown()
+tankMoveRot(B, C, 500, 135, -0.833, -0.225)
+tankMoveRot(B, C, 45, 500, -0.222, -2.27)
+penUp()
+
+tankMove(B, C, turn_speed, turn_speed, 12, 12)
+
+tankMoveRot(B, C, turn_speed, turn_speed, -1.35, 1.35)
+
+tankMove(B, C, turn_speed, turn_speed, 5.31, 5.31)
+
 penDown()
 tankMoveLen(B, C, 100, 100, 15.5)
 penUp()
@@ -162,7 +190,7 @@ tankMoveLen(B, C, 100, 100, 17)
 penUp()
 leftTurn(turn_speed)
 penDown()
-tankMoveLen(B, C, 100, 100, 12)
+tankMoveLen(B, C, 100, 100, 11.3)
 penUp()
 leftTurn(turn_speed)
 penDown()
