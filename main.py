@@ -90,28 +90,6 @@ def medMotor(port, speed, deg):
     port.run_target(speed, deg, Stop.BRAKE)
 
 
-def gyroTurn(deg, speed):
-    B = Motor(Port.B)
-    C = Motor(Port.C)
-    gyro_sensor = GyroSensor(Port.S2)
-
-    # reset the gyro angle to 0
-    gyro_sensor.angle()
-    time.sleep(0.5)
-    while(gyro_sensor.angle() != 0):
-        time.sleep(0.1)
-
-    while deg != gyro_sensor.angle():
-        if deg > 0:
-            B.run(-1*speed)
-            C.run(speed)
-        else:
-            B.run(speed)
-            C.run(-1*speed)
-    B.brake()
-    C.brake()
-
-
 def rightTurn(speed):
     tankMoveRot(B, C, speed, speed, -0.90, 0.90)
 
@@ -128,24 +106,6 @@ def penUp():
 def penDown():
     A = Motor(Port.A)
     medMotor(A, 500, 180)
-
-
-def centerDome():
-    # See https://docs.google.com/document/d/136q1P2ljUweMYeG0JeVoWiPpX8D0Bm5wqXMY0N2BvJM/edit for information on this funciton
-    penDown()
-    tankMoveRot(B, C, 500, 45, 2.27, 0.222)
-    tankMoveRot(B, C, 135, 500, 0.225, 0.833)
-    penUp()
-    tankMoveRot(B, C, 100, 100, -0.3, 0.3)
-    penDown()
-    tankMoveRot(B, C, 100, 100, 0.2, 0.2)
-    penUp()
-    tankMoveRot(B, C, 100, 100, -0.2, -0.2)
-    tankMoveRot(B, C, 100, 100, -0.3, 0.3)
-    penDown()
-    tankMoveRot(B, C, 500, 135, -0.833, -0.225)
-    tankMoveRot(B, C, 45, 500, -0.222, -2.27)
-    penUp()
 
 
 turn_speed = 25
