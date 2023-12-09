@@ -1,4 +1,4 @@
-# 2021 ORC da Vinci Challenge 🤖
+# ORC da Vinci Challenge 🤖
 Python code expressly written for a LEGO EV3 Mindstorm robot competing in the [Ottawa Robotics Competition](http://www.orc.ieeeottawa.ca/en/) (ORC). This program drew the Taj Mahal and [won first place at the ORC](http://www.orc.ieeeottawa.ca/wp-content/uploads/ORC2021-RankingsBIL.pdf).
 
 The `main.py` file is run on the [CPU](https://www.lego.com/en-us/product/ev3-intelligent-brick-45500), which is running MicroPython.
