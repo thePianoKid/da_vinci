@@ -10,3 +10,7 @@ The `main.py` file is run on the [CPU](https://www.lego.com/en-us/product/ev3-in
 The installation is explained in detail on the [LEGO education site](https://education.lego.com/en-us/product-resources/mindstorms-ev3/teacher-resources/python-for-ev3). 
 
 Once all the required software is installed on the EV3, simply clone the repo and use the code in the `main.py` file.
+
+## Demo 🎥
+
+The final result was a drawing of the Taj Mahal, [you can check it out on YouTube](https://youtu.be/Y0h-TtXdg4I).
